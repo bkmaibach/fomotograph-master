@@ -26,13 +26,17 @@ class Product
 	end
 
 	def self.sample_locations
-			@products = []
-
+		@products = []
 		LOCATIONS.each do |location|
   			@products.push self.all.select { |product| product.location == location }.sample
   		end
   		return @products
 	end
 
+	def self.find_by_location(location)
+		@products = []
+		@products.push self.all.select{ |product| product.location == location }
+		return @products
+	end
 
 end
