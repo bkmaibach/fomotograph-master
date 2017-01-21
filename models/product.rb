@@ -34,9 +34,11 @@ class Product
 	end
 
 	def self.find_by_location(location)
-		@products = []
-		@products.push self.all.select{ |product| product.location == location }
-		return @products
+		self.all.select{ |product| product.location == location }
+	end
+
+	def self.find(id)
+		self.all.select{ |product| product.id == id.to_i }.first
 	end
 
 end
