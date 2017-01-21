@@ -1,6 +1,7 @@
+
 # product.rb
 
-require 'HTTParty'
+require 'httparty'
 require 'json'
 
 class Product
