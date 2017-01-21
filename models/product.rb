@@ -5,7 +5,7 @@ require 'httparty'
 require 'json'
 
 class Product
-	url = 'https://fomotograph-api.udacity.com/products/json'
+	url = 'https://fomotograph-api.udacity.com/products.json'
 	DATA = HTTParty.get(url)['photos']
 
 	def initialize(product_data = {})
