@@ -9,7 +9,8 @@ end
 
 get '/team' do
   # TEAM PAGE LISTING THE TEAM MEMBERS
-
+  @page_title = "The Team"
+  erb :team
 end
 
 get '/products' do
