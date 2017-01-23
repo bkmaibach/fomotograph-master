@@ -22,7 +22,9 @@ end
 
 get '/products/location/:location' do
   # PAGE DISPLAYING ALL PHOTOS FROM ONE LOCATION
-
+  @products = Product.find_by_location(params[:location])
+  @page_title = params[:location]
+  erb :category
 end
 
 get '/products/:id' do
