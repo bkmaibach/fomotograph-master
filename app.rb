@@ -15,7 +15,9 @@ end
 
 get '/products' do
   # PRODUCTS PAGE LISTING ALL THE PRODUCTS
-
+  @page_title = "All locations"
+  @products = Product.sample_locations
+  erb :products
 end
 
 get '/products/location/:location' do
