@@ -40,7 +40,7 @@ get '/products/:id' do
   erb :single
 end
 
-get 'products/deals' do
+get '/deals' do
   # PAGE DISPLAYING ALL PRODUCTS UNDER $10
   @product = Product.find_under_price(10)
   @page_title = "Deals"
