@@ -1,6 +1,6 @@
 <!--Category-->
 
-<h1> <%= @page_title != 'us' ? @page_title.capitalize : @page_title.upcase %> </h1>
+<h1> <%= @page_title %> </h1>
 <div id='wrapper'>
 
 	<% @products.each do |product| %>
@@ -10,7 +10,7 @@
 	      <img src='<%= product.url %>' />
 	    </div>
 	    <div class='caption'>
-	      <%= product.title %>
+	      <%= titlecase(@product.location) %>
 	    </div>
 	  </div>
 	  </a>
