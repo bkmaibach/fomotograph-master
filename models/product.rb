@@ -36,7 +36,7 @@ class Product
 	end
 
 	def self.find_under_price(price)
-		self.all.select{ |product| product.price <= price}
+		self.all.select{ |product| product.price < price }
 	end
 
 	def self.find(id)

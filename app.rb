@@ -42,7 +42,8 @@ end
 
 get '/deals' do
   # PAGE DISPLAYING ALL PRODUCTS UNDER $10
-  @product = Product.find_under_price(10)
-  @page_title = "Deals"
-  erb :deals
+  @limit = 10
+  @product = Product.find_under_price(@limit)
+  @page_title = "Deals under $#{@limit}"
+  erb :category
 end
