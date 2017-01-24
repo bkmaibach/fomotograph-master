@@ -1,6 +1,12 @@
 require 'sinatra'
 require_relative 'models/product.rb'
 
+helpers do
+  def titlecase(title)
+    title != 'us' ? title.capitalize : title.upcase
+  end
+end
+
 get '/' do
   # HOME LANDING PAGE SHOWING BANNER PHOTO, TITLE, AND SUBTITLE
   @page_title = "Home"
@@ -29,7 +35,7 @@ end
 
 get '/products/:id' do
   # PAGE DISPLAYING ONE PRODUCT WITH A GIVEN ID
-  @page_title = "Product Page"
-  @products = Product.find(params[:id])
-  erb :id
+  @product = Product.find(params[:id])
+  @page_title = @product.title
+  erb :single
 end
