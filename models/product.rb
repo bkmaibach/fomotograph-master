@@ -1,6 +1,4 @@
-
 # product.rb
-
 require 'httparty'
 require 'json'
 
@@ -35,6 +33,10 @@ class Product
 
 	def self.find_by_location(location)
 		self.all.select{ |product| product.location == location }
+	end
+
+	def self.find_under_price(price)
+		self.all.select{ |product| product.price <= price}
 	end
 
 	def self.find(id)
